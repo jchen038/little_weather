@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title WeatherApp
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    -# = stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons"
+    = javascript_include_tag 'application'
+  %body
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      %header.mdl-layout__header
+        .mdl-layout__header-row
+          %span.mdl-layout-title
+            Weather 
+      %main.mdl-layout__content.content  
+        = yield

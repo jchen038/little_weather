@@ -1,0 +1,9 @@
+production:
+  api_key: "5972d422d8daf62d4db1bb99d6e1ee05"
+  api_url: "http://api.openweathermap.org/data/2.5"
+development:
+  api_key: "5972d422d8daf62d4db1bb99d6e1ee05"
+  api_url: "http://api.openweathermap.org/data/2.5"
+test:
+  api_key: "1111111111"
+  api_url: "http://api.openweathermap.org/data/2.5"

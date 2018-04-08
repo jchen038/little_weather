@@ -1,0 +1,5 @@
+.mdl-cell.mdl-cell--4-col
+  = form_tag(weathers_path, method: "get") do 
+    = text_field_tag(:city, "", {class: "mdl-textfield__input", placeholder: "Enter City Name"})
+    .mdl-cell.mdl-cell--2-col
+      = submit_tag("Submit", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored")
