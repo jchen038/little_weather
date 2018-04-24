@@ -47,18 +47,21 @@ RSpec.describe WeatherService, type: :service do
     it "should return temperature by city name" do 
       http_result = instance_double("HTTP::Response", body: json_object.to_json)
       allow(HTTP).to receive(:get).and_return(http_result)
-      expect(WeatherService.get_weather_by_city("Example")).to eq({:name=>"Irvine", :temperature=>58.98})
+      result = WeatherService.get_weather_by_city("Example")
+      expect(result.class).to eq(Weather)
+      expect(result.location).to eq("Irvine")
     end
 
     it "should return empty hash if city is not found" do 
       http_result = instance_double("HTTP::Response", body: {"cod" => 404}.to_json)
       allow(HTTP).to receive(:get).and_return(http_result)
-      expect(WeatherService.get_weather_by_city("Example")).to eq({})
+      result = WeatherService.get_weather_by_city("Example")
+      expect(result.is_blank?).to be_truthy
     end
   end
 
   describe "#build_response" do 
-    it "should return city name and temperature with response body" do 
+    xit "should return city name and temperature with response body" do 
       result = WeatherService.build_response(json_object)
       expect(result[:name]).to eq("Irvine")
       expect(result[:temperature]).to eq(58.98)

@@ -3,15 +3,15 @@
     = render partial: "search"
 .mdl-grid
   .mdl-cell.mdl-cell--6-col
-    - if @result.empty?
+    - if @result.is_blank?
       Oops Something went wrong
     - else 
       .mdl-card.mdl-shadow--2dp
         .mdl-card__title
           .mdl-card__title-text
             %h4
-              = @result[:name]
+              = @result.location
         .mdl-card__supporting-text
-          = @result[:temperature]
+          = @result.temperature
           %span 
             ° F

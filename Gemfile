@@ -14,9 +14,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'http'
 gem 'haml-rails'
 gem 'material_design_lite-rails', '~> 1.3'
+gem 'redis'
+gem 'redis-namespace'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
+  gem 'pry'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
